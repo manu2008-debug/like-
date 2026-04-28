@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Respected HODs Mission 30 Seconds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg1: #fff8ef;
+      --bg2: #fff0da;
+      --card: #ffffffcc;
+      --text: #1f2430;
+      --muted: #5b6473;
+      --primary: #ff7a00;
+      --primary-2: #ffb347;
+      --accent: #7c3aed;
+      --accent-2: #1d4ed8;
+      --success: #0f9d58;
+      --line: #e8dccd;
+      --shadow: 0 20px 60px rgba(255, 122, 0, 0.18);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 179, 71, 0.45), transparent 28%),
+        radial-gradient(circle at top right, rgba(124, 58, 237, 0.16), transparent 24%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      display: grid;
+      place-items: center;
+      padding: 32px 18px;
+    }
+
+    .page {
+      width: min(980px, 100%);
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .page::before,
+    .page::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      border-radius: 999px;
+      filter: blur(4px);
+      opacity: 0.9;
+    }
+
+    .page::before {
+      width: 220px;
+      height: 220px;
+      background: rgba(255, 122, 0, 0.08);
+      top: -70px;
+      right: -70px;
+    }
+
+    .page::after {
+      width: 180px;
+      height: 180px;
+      background: rgba(124, 58, 237, 0.08);
+      bottom: -50px;
+      left: -50px;
+    }
+
+    .hero {
+      padding: 44px 40px 22px;
+      position: relative;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      background: linear-gradient(90deg, #fff3e0, #ffffff);
+      border: 1px solid #ffe0b5;
+      border-radius: 999px;
+      color: #b85c00;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      font-family: Montserrat, sans-serif;
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: 1.04;
+      margin: 18px 0 10px;
+    }
+
+    .sublead {
+      font-family: Montserrat, sans-serif;
+      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+      line-height: 1.45;
+      font-weight: 700;
+      color: var(--primary);
+      max-width: 780px;
+      margin: 0 0 14px;
+    }
+
+    .lead {
+      font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+      color: var(--muted);
+      max-width: 720px;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      padding: 0 40px 38px;
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(31, 36, 48, 0.05);
+    }
+
+    .panel h2 {
+      margin: 0 0 18px;
+      font-family: Montserrat, sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.01em;
+    }
+
+    .actions {
+      display: grid;
+      gap: 14px;
+    }
+
+    .action {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fffaf4, #fff);
+      border: 1px solid #f4e6d6;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 21px;
+      flex: 0 0 42px;
+      background: linear-gradient(135deg, #ff1e1e, #ff4d4d); color: white; box-shadow: 0 4px 12px rgba(255,0,0,0.4);
+    }
+
+    .action strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .action span {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.5;
+    }
+
+    .formula {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .eq {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(29, 78, 216, 0.08));
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      color: #2a2f45;
+      border-radius: 22px;
+      padding: 18px;
+      font-weight: 800;
+      font-size: 1.02rem;
+      text-align: center;
+    }
+
+    .eq strong {
+      color: var(--accent);
+    }
+
+    .footer-note {
+      margin-top: 6px;
+      padding: 22px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #ff7a00, #ff9f43);
+      color: white;
+      box-shadow: 0 16px 40px rgba(255, 122, 0, 0.28);
+    }
+
+    .footer-note p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      font-weight: 600;
+    }
+
+    .mini {
+      margin-top: 12px;
+      display: inline-block;
+      font-size: 0.88rem;
+      opacity: 0.9;
+    }
+
+    .share-line {
+      margin-top: 14px;
+      color: var(--accent-2);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 760px) {
+      .hero { padding: 30px 22px 18px; }
+      .grid { grid-template-columns: 1fr; padding: 0 22px 24px; }
+      .panel { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="tag">Mission</div>
+      <h1>Mission - Like, Comment & Share</h1>
+            <p class="lead">Our admission posts are powerful, but only if they are seen. Let’s amplify them together with one small, consistent action from every department.</p>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Every time an admission post goes live</h2>
+        <div class="actions">
+          <div class="action">
+            <div class="icon">👍</div>
+            <div>
+              <strong>Like it</strong>
+              <span>A quick like helps the post gain visibility and early momentum.</span>
+            </div>
+          </div>
+
+          <div class="action">
+            <div class="icon">💬</div>
+            <div>
+              <strong>Comment on it</strong>
+              <span>Even a short comment boosts engagement and improves reach.</span>
+            </div>
+          </div>
+
+          <div class="action">
+            <div class="icon">📢</div>
+            <div>
+              <strong>Share it everywhere</strong>
+              <span>WhatsApp, Instagram, Facebook, department groups, and class WhatsApp groups.</span>
+            </div>
+          </div>
+        </div>
+        
+      </article>
+
+      <aside class="formula panel">
+        <div class="eq">One share &rarr; <strong>More Reach</strong></div>
+        <div class="eq">More Reach &rarr; <strong>More Admissions</strong></div>
+        
+
+        <div class="footer-note">
+          <p>A small effort from each of us can make a big difference in our admissions</p>
+          <span class="mini"><strong>Let’s support every admission post together.</strong></span>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
